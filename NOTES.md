@@ -26,3 +26,13 @@ und wie kommen die bilder in einem scribus-dokument?
 so sollte es gehen.
 
 ghostscript brauchst du dafür nicht.
+
+## Aligning the images inside of the frame
+
+Generally speaking, it's not a good idea to put images in a frame without filling the whole frame.
+
+The preflight verifier will give you a warning in such cases, because there is a risk that you miss wrong alignments when you start doing so.
+
+The solution to your problem seems to be to slightly change your workflow, resize the frames to their content, and then use the guides and the alignment tool to place your frame.
+
+Of course, through scripting you can get Scribus to help you center the image in the frame. [This one](https://wiki.scribus.net/canvas/Align_an_Image_in_its_Frame) does it, but You will need Tcl/Tk installed (of course it's easy to change the script do only do the image centering without using any dialog).
