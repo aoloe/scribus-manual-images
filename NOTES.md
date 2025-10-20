@@ -36,3 +36,24 @@ The preflight verifier will give you a warning in such cases, because there is a
 The solution to your problem seems to be to slightly change your workflow, resize the frames to their content, and then use the guides and the alignment tool to place your frame.
 
 Of course, through scripting you can get Scribus to help you center the image in the frame. [This one](https://wiki.scribus.net/canvas/Align_an_Image_in_its_Frame) does it, but You will need Tcl/Tk installed (of course it's easy to change the script do only do the image centering without using any dialog).
+
+## Text flow around images
+
+Ok I had a look at how the detection of the contour is implemented in LibreOffice and, yes, it can be useful.
+
+Still, depending on the kind of images one are flowing around, it's -- in my experience -- often better to make a vary rough contour and then adapt it a bit to get a good flow of the text.
+But it's worth mostly not worth to follow to closely the image. 
+I also tend to keep "flat" lines horizontal and have nice "diagonals" and vertical lines, rather than making each line of text have a different length (with exceptions of course!).
+
+Personally, improving the way nodes are added, moved around, aligned, curved, multiple selected... is what gives me more productivity.
+And this insight the development version of Scribus has improved a lot... even if it's not there yet where it should be...
+
+Also, if you load a tif into Scribus you can edit it with an external editor (it's the "Edit Image" command), get Gimp or any other tool to open with that image, define the clip path (if the editor has a detection of the contour you can use it!) and use the clip path in Scribus.
+
+### Clipping path
+
+- In Gimp, create a selection, "Selection > To Path"; check that the path is in the "Paths" panel; save the image as Tif or Psd.
+- Load the image in a Scribus image frame; In the "Image Properties", "Clipping Path" section, select the path.
+- In the "Properties", flow around the clipping path.
+
+
